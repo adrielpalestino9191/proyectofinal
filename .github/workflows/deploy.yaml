@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    enviroment: PROYECTOFINAL
+    environment: PROYECTOFINAL
 
     steps:
     - name: Checkout code
