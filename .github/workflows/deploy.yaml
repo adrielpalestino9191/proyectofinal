@@ -23,9 +23,6 @@ jobs:
     - name: Validate PHP syntax
       run: find . -type f -name "*.php" -exec php -l {} \;
 
-    - name: Install Composer dependencies
-      run: composer install --no-interaction --prefer-dist --optimize-autoloader
-    
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
