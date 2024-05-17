@@ -1,14 +1,12 @@
 <?php
 
 // Configuración de la conexión PDO
-$host = 'localhost:8080'; // Cambia 'nombre_del_host' por el nombre de tu host de MySQL
-$dbname = 'tesisbd'; // Cambia 'nombre_de_la_base_de_datos' por el nombre de tu base de datos
-$charset = 'utf8mb4'; // Cambia 'utf8mb4' si es necesario
-$port = '3306'; // Agrega el número de puerto aquí
+$host = getenv('MYSQL_HOST');
+$user = getenv('MYSQL_USER');
+$password = getenv('MYSQL_PASSWORD');
+$database = getenv('MYSQL_DATABASE');
 
-$dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
-$username = 'root'; // Cambia 'nombre_de_usuario' por tu nombre de usuario de MySQL
-$password = 'admin'; // Cambia 'contraseña' por tu contraseña de MySQL (si es necesario)
+$pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password);
 $pdo=null;
 // Intenta realizar la conexión PDO
 try {
