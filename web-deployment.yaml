@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-proyecto
+  namespace: my-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mi-proyecto
+  template:
+    metadata:
+      labels:
+        app: mi-proyecto
+    spec:
+      containers:
+      - name: mi-proyecto
+        image: proyecto-php:latest
+        ports:
+        - containerPort: 80
