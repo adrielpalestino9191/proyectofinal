@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proyecto-php
+  namespace: proyecto-tesis
+spec:
+  selector:
+    matchLabels:
+      app: proyecto-php
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: proyecto-php
+    spec:
+      containers:
+      - name: mi-proyecto
+        image: proyecto-php
+        env:
+        - name: DB_HOST
+          value: "mysql.proyecto-tesis.svc.cluster.local"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASSWORD
+          value: "admin"
+        - name: DB_NAME
+          value: "tesisbd"
+        ports:
+        - containerPort: 80

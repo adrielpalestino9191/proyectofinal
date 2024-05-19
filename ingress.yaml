@@ -1,19 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: mi-proyecto-ingress
-  namespace: my-namespace
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: proyecto-ingress
+  namespace: proyecto-tesis
 spec:
   rules:
-  - host: mi-proyecto.local
+  - host: proyecto.local
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: mi-proyecto
+            name: proyecto-php
             port:
               number: 80

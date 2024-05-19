@@ -2,13 +2,14 @@
 FROM php:apache
 # Copia el los archivos php al directorio de trabajo del contenedor
 
-COPY index.php /var/www/html/
-COPY registro.php /var/www/html/
-COPY conexion.php /var/www/html/
-COPY login.php /var/www/html/
-COPY menu.php /var/www/html/
-COPY registrobd.php /var/www/html/
-COPY guardar_respuestas.php /var/www/html/
+#COPY index.php /var/www/html/
+#COPY registro.php /var/www/html/
+#COPY conexion.php /var/www/html/
+#COPY login.php /var/www/html/
+#COPY menu.php /var/www/html/
+#COPY registrobd.php /var/www/html/
+#COPY guardar_respuestas.php /var/www/html/
+COPY . /var/www/html
 
 # Instalar extensiones PDO MySQL
 RUN docker-php-ext-install pdo_mysql
